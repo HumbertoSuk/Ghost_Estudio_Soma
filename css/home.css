@@ -1,0 +1,61 @@
+/* Background image styling */
+#home .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: url('/assets/img/background/Fondo Home.png') no-repeat center center / cover;
+    z-index: -1;
+}
+
+/* Centered logo container */
+#home .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    padding-top: 6rem; /* Añade más espacio arriba */
+}
+
+/* Logo styling */
+#home .home-logo {
+    max-width: 40%;
+    height: auto;
+    animation: zoom-in 2s ease-in-out;
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    #home .home-logo {
+        max-width: 70%; /* Más pequeño en pantallas pequeñas */
+    }
+
+    .hero-title h1 {
+        font-size: 2rem;
+    }
+
+    .hero-title p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    #home .logo-container {
+        padding-top: 3rem; /* Reduce espacio superior en pantallas pequeñas */
+    }
+}

@@ -1,0 +1,59 @@
+/* Configuración general */
+#about-content {
+    background: url('/assets/img/background/Separador fondo negro.png') no-repeat bottom center / contain;
+    background-size: cover;
+    background-color: #992120; /* Fondo negro */
+    color: #f2eee3; /* Texto blanco */
+    padding: 0 30px; /* Margen a la izquierda y derecha */
+    font-family: 'Roboto', sans-serif; /* Fuente para texto */
+}
+
+
+/* Título principal */
+.about-title {
+    font-family: 'Bokor', sans-serif; /* Fuente exclusiva para títulos */
+    color: #992120; /* Rojo */
+    font-size: 4.2rem; /* Tamaño del título */
+    text-transform: uppercase;
+    transform: translateX(-400px);
+}
+
+/* Imagen */
+.photo-frame {
+    text-align: center;
+}
+
+.photo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados */
+    transform:scale(1.2);
+    margin-bottom: 80PX;
+}
+
+/* Texto Hola */
+.about-hello-text {
+    font-family: 'Bokor', sans-serif;
+    font-size: 4.2rem; /* Tamaño del texto Hola */
+    color: #992120; /* Rojo */
+    margin-bottom: 0.2rem;
+    transform: translate(-150px, -80px);
+}
+
+/* Texto en Roboto */
+.about-roboto-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem; /* Tamaño del texto general */
+    line-height: 1.6; /* Altura de línea */
+    color: #f2eee3; /* Blanco */
+    margin-bottom: 1rem;
+    text-align: justify;
+    transform: translate(-150px, -80px);
+}
+
+/* Destacar texto */
+.about-highlight {
+    color: #992120; /* Rojo */
+    font-weight: bold;
+}
+

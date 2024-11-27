@@ -1,0 +1,95 @@
+/* Configuración general */
+#about-details {
+    background: url('/assets/img/background/Separador fondo rojo.png') no-repeat center bottom / contain;
+    background-size: cover;
+    background-color: #0d0d0d; /* Fondo negro */
+    color: #f2eee3; /* Texto blanco */
+    padding: 50px 0; /* Espaciado superior e inferior */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 900px; /* Ajustar el ancho para centrar */
+    padding: 0 15px; /* Margen interno */
+}
+
+/* Títulos */
+.section-title {
+    font-family: 'Bokor', sans-serif; /* Fuente especial */
+    font-size: 4.0rem;
+    color: #0d0d0d; /* Negro */
+    margin-bottom: 20px;
+}
+
+/* Contenido */
+.section-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #f2eee3; /* Blanco */
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Lista de habilidades */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+    transform: translateX(120px);
+}
+
+.skills-list li {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #f2eee3; /* Blanco */
+    position: relative;
+    padding-left: 20px;
+}
+
+.skills-list li::before {
+    content: "★"; /* Estrella antes del texto */
+    color: #0d0d0d; /* Negro */
+    position: absolute;
+    left: -15px;
+    top: -10px;
+    font-size: 2rem;
+}
+
+/* Foto */
+.photo-frame2 {
+    text-align: center;
+    margin-top: 20px;
+    transform: translate(40px, 75px);
+}
+
+.photo {
+    max-width: 95%; /* Ajusta el ancho de la imagen */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Redes sociales */
+.social-links {
+    margin-top: 20px;
+    margin-bottom: 130PX;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+}
+
+.social-icon {
+    width: 80px; /* Tamaño del ícono */
+    height: 80px;
+    margin-right: 10px; /* Espaciado con el texto */
+}
+
+.social-item span {
+    font-family: 'Bokor', sans-serif; /* Fuente especial */
+    font-size: 2.5rem;
+    color: #f2eee3; /* Blanco */
+}
