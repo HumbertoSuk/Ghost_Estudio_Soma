@@ -1,0 +1,52 @@
+/* Footer General Styles */
+.footer {
+    background-color: #0d0d0d; /* Fondo negro */
+    color: #f2eee3; /* Texto blanco */
+    padding: 20px 0;
+}
+
+/* Logo a la izquierda */
+.footer-logo {
+    width: 250px;
+    height: auto;
+    cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+}
+
+/* Íconos de redes sociales */
+.footer-icon img {
+    width: 120px;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+}
+
+.footer-icon:hover img {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* Enlaces del footer */
+.footer-links {
+    font-family: 'Bokor', sans-serif;
+}
+
+.menu-link {
+    color: #992120;
+    font-size: 1.6rem;
+    text-decoration: none;
+    cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+}
+
+
+
+/* Imagen de Batzzy a la derecha */
+.footer-batzzy {
+    width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+    cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+}
+
+.footer-batzzy:hover {
+    transform: scale(1.1);
+}

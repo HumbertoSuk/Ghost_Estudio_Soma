@@ -2,12 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const app = document.getElementById("app");
     const content = document.getElementById("content");
 
+    // Cargar el menú dinámicamente
     fetch('/html/components/navbar.html')
         .then(response => response.text())
         .then(navbarHtml => {
             app.insertAdjacentHTML("afterbegin", navbarHtml);
 
-            const sections = ['home', 'about', 'about-detail', 'projects', 'contact'];
+            // Cargar las secciones dinámicamente
+            const sections = ['home', 'about', 'about-detail', 'projects', 'contact', 'footer'];
             const sectionPromises = sections.map(section =>
                 fetch(`/html/components/${section}.html`).then(response => response.text())
             );
@@ -21,16 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
                         content.appendChild(sectionDiv);
                     });
 
-                    initializeProjects(); // Llamar a la inicialización de projects.js
+                    // Llamar a la inicialización de los proyectos
+                    initializeProjects();
+
+                    // Inicializar la funcionalidad de scroll del menú
+                    initializeMenuScroll();
                 })
                 .catch(error => console.error('Error al cargar las secciones:', error));
         })
         .catch(error => console.error('Error al cargar el menú:', error));
 });
 
-
+/**
+ * Función para inicializar los proyectos dinámicamente.
+ */
 function initializeProjects() {
-    // Datos de los proyectos
     const projectsData = [
         {
             title: "Cultivate",
@@ -68,39 +75,79 @@ function initializeProjects() {
             title: "Semillas del Desierto",
             images: ["/assets/img/projects/Proyecto 9.1.png", "/assets/img/projects/Proyecto 9.2.png"]
         }
-        
     ];
-
 
     const projectsGrid = document.getElementById("projects-grid");
     if (!projectsGrid) {
-        console.error("El contenedor projects-grid no se encontró.");
+        console.error("El contenedor 'projects-grid' no se encontró.");
         return;
     }
 
     projectsData.forEach((project) => {
-        const projectCard = document.createElement("div");
-        projectCard.classList.add("col-md-4");
+        const projectCard = createProjectCard(project);
+        projectsGrid.appendChild(projectCard);
+    });
+}
 
-        projectCard.innerHTML = `
-            <div class="project-card">
-                <div class="project-image-container">
-                    <img src="${project.images[0]}" alt="${project.title}" class="project-image">
-                    <div class="project-overlay">
-                        <p class="project-text">${project.title}</p>
-                    </div>
+/**
+ * Crea una tarjeta de proyecto.
+ * @param {Object} project - Datos del proyecto (título e imágenes).
+ * @returns {HTMLElement} - Tarjeta del proyecto.
+ */
+function createProjectCard(project) {
+    const projectCard = document.createElement("div");
+    projectCard.classList.add("col-md-4");
+
+    projectCard.innerHTML = `
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="${project.images[0]}" alt="${project.title}" class="project-image">
+                <div class="project-overlay">
+                    <p class="project-text">${project.title}</p>
                 </div>
             </div>
-        `;
+        </div>
+    `;
 
-        projectsGrid.appendChild(projectCard);
+    const imgElement = projectCard.querySelector(".project-image");
+    let currentIndex = 0;
 
-        const imgElement = projectCard.querySelector(".project-image");
-        let currentIndex = 0;
+    // Cambiar imágenes automáticamente cada 2 segundos
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % project.images.length;
+        imgElement.src = project.images[currentIndex];
+    }, 2000);
 
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % project.images.length;
-            imgElement.src = project.images[currentIndex];
-        }, 2000);
-    });
+    return projectCard;
+}
+
+/**
+ * Función para manejar el estado del menú al hacer scroll.
+ */
+function initializeMenuScroll() {
+    const sections = document.querySelectorAll("section");
+    const menuLinks = document.querySelectorAll(".menu-link");
+
+    // Actualizar la clase activa según el scroll
+    const updateActiveLink = () => {
+        let currentSection = "";
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        menuLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").slice(1) === currentSection) {
+                link.classList.add("active");
+            }
+        });
+    };
+
+    window.addEventListener("scroll", updateActiveLink);
 }

@@ -1,0 +1,107 @@
+#contact-form{
+    background: url('/assets/img/background/Separador fondo blanco.png') no-repeat center bottom / contain;
+    background-size: cover;
+    background-color: #0d0d0d;
+    position: relative;
+    color: #f2eee3; /* Texto blanco */
+    padding: 50px 0; /* Espaciado superior e inferior */
+}
+
+
+/* Título del formulario */
+.form-title {
+    font-family: 'Bokor', sans-serif;
+    font-size: 5rem;
+    color: #992120;
+    text-transform: uppercase;
+    transform: translateX(-300px);
+}
+
+.form-subtitle {
+    font-family: 'Bokor', sans-serif;
+    font-size: 2.2rem;
+    color: #0d0d0d;
+    margin-bottom: 30px;
+    transform: translateX(-350px);
+}
+
+/* Etiquetas del formulario */
+#contact-form .form-label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #992120;
+    cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+}
+
+/* Campos de entrada */
+#contact-form .form-control {
+    border: 2px solid #0d0d0d;
+    border-radius: 5px;
+    cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+}
+
+/* Casillas de verificación personalizadas */
+#contact-form .form-check-input {
+    width: 25px;
+    height: 25px;
+    appearance: none; /* Elimina el estilo predeterminado */
+    border: 2px solid #0d0d0d; /* Borde negro */
+    border-radius: 3px; /* Bordes ligeramente redondeados */
+    background-color: #f7f3eb; /* Fondo del checkbox */
+    position: relative;
+    cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+/* Estilo cuando está marcado */
+#contact-form .form-check-input:checked {
+    background-color: #992120;
+    border-color: #992120;
+}
+
+/* Dibujar un check dentro cuando está marcado */
+#contact-form .form-check-input:checked::before {
+    content: "✓";
+    color: #fff; /* Check blanco */
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Hover efecto */
+#contact-form .form-check-input:hover {
+    transform: scale(1.1); /* Agrandar ligeramente al pasar el mouse */
+}
+
+/* Etiquetas */
+#contact-form .form-check-label {
+    font-size: 1.2rem;
+    color: #0d0d0d;
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+}
+
+
+/* Botón */
+#contact-form .btn-primary {
+    background-color: #992120;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+    margin-bottom: 110px;
+}
+
+#contact-form  .btn-primary:hover {
+    background-color: #6e1818;
+    cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+}
+
+

@@ -1,16 +1,16 @@
 /* Fondo y estilos generales */
-body {
+#projects{
     background: url('/assets/img/background/Separador fondo negro.png') no-repeat center bottom / contain;
     background-size: cover;
-    background-color: #f2eee3;
-    color: #f2eee3;
+    background-color: #f2eee3; 
+    color: #f2eee3; /* Texto blanco */
+    padding: 50px 0; /* Espaciado superior e inferior */
     font-family: 'Roboto', sans-serif;
-    margin: 0;
+    
 }
 
-#projects {
-    background-color: #0d0d0d;
-    padding: 60px 20px;
+h1{
+    margin-bottom: 220px;
 }
 
 .projects-title {

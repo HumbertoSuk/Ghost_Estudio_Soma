@@ -10,8 +10,8 @@
 
 /* Contenedor principal */
 .container {
-    max-width: 900px; /* Ajustar el ancho para centrar */
-    padding: 0 15px; /* Margen interno */
+    max-width: 1200px; /* Ajustar el ancho para centrar */
+    padding: 0 10px; /* Margen interno */
 }
 
 /* Títulos */
@@ -37,7 +37,7 @@
     padding: 0;
     margin-top: 20px;
     text-align: left;
-    transform: translateX(120px);
+    transform: translateX(160px);
 }
 
 .skills-list li {
@@ -62,13 +62,12 @@
 .photo-frame2 {
     text-align: center;
     margin-top: 20px;
-    transform: translate(40px, 75px);
+    transform: translate(40px, 20px);
 }
 
 .photo {
-    max-width: 95%; /* Ajusta el ancho de la imagen */
-    height: auto;
-    border-radius: 10px; /* Bordes redondeados */
+    max-width: 40%; /* Ajusta el ancho de la imagen */
+    height: 40%;
 }
 
 /* Redes sociales */
