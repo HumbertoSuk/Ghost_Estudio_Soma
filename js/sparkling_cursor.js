@@ -1,6 +1,6 @@
 // Configuración de colores y cantidad de partículas
 var colour = "red"; // Color principal
-var sparkles = 800; // Número de partículas visibles
+var sparkles = 200; // Número de partículas visibles
 
 // Variables internas
 var x = ox = 400, y = oy = 300;

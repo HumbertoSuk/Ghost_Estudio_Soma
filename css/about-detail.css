@@ -100,16 +100,6 @@
 }
 
 /* Animaciones generales */
-@keyframes blink {
-    0%, 100% {
-        text-shadow: 0 0 5px #fff, 0 0 10px #992120, 0 0 20px #992120;
-        opacity: 1;
-    }
-    50% {
-        text-shadow: 0 0 2px #fff, 0 0 5px #992120;
-        opacity: 0.8;
-    }
-}
 
 @keyframes pulse {
     0%, 100% {
@@ -127,7 +117,6 @@
     color: #0d0d0d; /* Negro */
     margin-bottom: 20px;
     text-align: left;
-    animation: blink 2s infinite; /* Parpadeo en loop */
 }
 
 /* Animación para íconos sociales */

@@ -47,7 +47,6 @@
     border-radius: 50%; /* Hace el botón circular */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra inicial */
-    animation: pulse 2s infinite ease-in-out; /* Animación de latido */
 }
 
 /* Hover effects */
