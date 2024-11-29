@@ -4,14 +4,14 @@
     background-size: cover;
     background-color: #0d0d0d; /* Fondo negro */
     color: #f2eee3; /* Texto blanco */
-    padding: 50px 0; /* Espaciado superior e inferior */
+    padding: 0px 0; /* Espaciado superior e inferior */
     font-family: 'Roboto', sans-serif;
 }
 
 /* Contenedor principal */
 .container {
     max-width: 1200px; /* Ajustar el ancho para centrar */
-    padding: 0 10px; /* Margen interno */
+    padding: 0px 20px; /* Margen interno */
 }
 
 /* Títulos */
@@ -20,6 +20,7 @@
     font-size: 4.0rem;
     color: #0d0d0d; /* Negro */
     margin-bottom: 20px;
+    text-align: left;
 }
 
 /* Contenido */
@@ -30,14 +31,13 @@
     margin-bottom: 20px;
     text-align: justify;
 }
-
 /* Lista de habilidades */
 .skills-list {
     list-style: none;
     padding: 0;
     margin-top: 20px;
     text-align: left;
-    transform: translateX(160px);
+    position: relative; /* Para permitir un control preciso */
 }
 
 .skills-list li {
@@ -46,34 +46,39 @@
     margin-bottom: 10px;
     color: #f2eee3; /* Blanco */
     position: relative;
-    padding-left: 20px;
+    padding-left: 30px; /* Ajusta la distancia entre la estrella y el texto */
 }
 
 .skills-list li::before {
     content: "★"; /* Estrella antes del texto */
     color: #0d0d0d; /* Negro */
     position: absolute;
-    left: -15px;
-    top: -10px;
-    font-size: 2rem;
+    left: 0; /* Alinear la estrella a la izquierda del elemento */
+    top: 0; /* Alinear verticalmente con el texto */
+    font-size: 1.6rem; /* Tamaño de la estrella */
 }
+
 
 /* Foto */
 .photo-frame2 {
     text-align: center;
     margin-top: 20px;
     transform: translate(40px, 20px);
+    width: 120%;
+    margin-bottom: 0px;
+    transform: translate(50px, -250px); 
 }
 
 .photo {
-    max-width: 40%; /* Ajusta el ancho de la imagen */
-    height: 40%;
+    width: 100%; /* Ajusta el ancho de la imagen */
+    height: 100%;
 }
 
 /* Redes sociales */
 .social-links {
     margin-top: 20px;
-    margin-bottom: 130PX;
+    margin-bottom: 20PX;
+    transform: translate(-600px, 250px);
 }
 
 .social-item {
@@ -84,11 +89,142 @@
 .social-icon {
     width: 80px; /* Tamaño del ícono */
     height: 80px;
-    margin-right: 10px; /* Espaciado con el texto */
+    margin-right: 5px; /* Espaciado con el texto */
+    margin-left: 50px;
 }
 
 .social-item span {
     font-family: 'Bokor', sans-serif; /* Fuente especial */
     font-size: 2.5rem;
     color: #f2eee3; /* Blanco */
+}
+
+/* Animaciones generales */
+@keyframes blink {
+    0%, 100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #992120, 0 0 20px #992120;
+        opacity: 1;
+    }
+    50% {
+        text-shadow: 0 0 2px #fff, 0 0 5px #992120;
+        opacity: 0.8;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+/* Animación para títulos */
+.section-title {
+    font-family: 'Bokor', sans-serif;
+    font-size: 4.0rem;
+    color: #0d0d0d; /* Negro */
+    margin-bottom: 20px;
+    text-align: left;
+    animation: blink 2s infinite; /* Parpadeo en loop */
+}
+
+/* Animación para íconos sociales */
+.social-icon {
+    width: 80px; /* Tamaño del ícono */
+    height: 80px;
+    margin-right: 5px; /* Espaciado con el texto */
+    margin-left: 50px;
+    animation: pulse 1.5s infinite ease-in-out; /* Latido en loop */
+}
+
+
+/* Responsividad */
+@media (max-width: 900px) {
+    #about-details .container {
+        display: flex;
+        flex-direction: column; /* Cambiar a disposición en columna */
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column; /* Reorganizar elementos en columna */
+        align-items: center; /* Centrar los elementos */
+    }
+
+    /* Ajuste de cada sección */
+    .col-md-6 { /* Educación y experiencia */
+        width: 100%; /* Cada columna ocupa el ancho completo */
+        margin-bottom: 20px; /* Espaciado entre secciones */
+        order: 1; /* Mostrar primero */
+    }
+
+    .col-md-4 { /* Habilidades */
+        width: 100%;
+        margin-bottom: 20px;
+        order: 2; /* Mostrar después de educación */
+    }
+
+    .social-links { /* Redes sociales */
+        order: 3; /* Mostrar después de habilidades */
+        text-align: center; /* Centrar contenido */
+        margin-top: 20px; /* Ajustar espaciado superior */
+    }
+
+    .photo-frame2 { /* Imagen */
+        order: 4; /* Mostrar imagen al final */
+        text-align: center; /* Centrar imagen */
+        margin-top: 30px; /* Espaciado adicional */
+        width: 70%;
+        transform: translate(0px, 0px);
+        margin-bottom: 100px; 
+    }
+
+    /* Ajustar títulos */
+    .section-title {
+        font-size: 2.5rem; /* Reducir tamaño de los títulos */
+        text-align: center; /* Centrar texto */
+        margin-top: 20px; /* Espaciado superior */
+    }
+
+    /* Ajustar texto de contenido */
+    .section-content {
+        font-size: 1rem; /* Reducir tamaño del texto */
+        text-align: justify; /* Justificar contenido */
+        margin-bottom: 15px; /* Ajustar espaciado inferior */
+    }
+
+    /* Lista de habilidades */
+    .skills-list {
+        text-align: center; /* Centrar la lista */
+        padding-left: 0; /* Eliminar padding innecesario */
+        margin-bottom: 30px;
+    }
+
+    .skills-list li {
+        padding-left: 0; /* Eliminar espacio antes del texto */
+    }
+
+    .skills-list li::before {
+        left: 0; /* Alinear estrella correctamente */
+    }
+
+
+    /* Redes sociales */
+.social-links {
+    margin-top: 20px;
+    margin-bottom: 40PX;
+    transform: translate(0px, 0px);
+}
+    /* Redes sociales */
+    .social-icon {
+        width: 60px; /* Reducir tamaño del ícono */
+        height: 60px;
+        margin-right: 5px; /* Ajustar espaciado */
+    }
+
+    .social-item span {
+        font-size: 1.8rem; /* Reducir tamaño del texto */
+    }
 }

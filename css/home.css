@@ -36,6 +36,47 @@
     }
 }
 
+/* Floating button */
+.floating-button {
+    position: fixed;
+    bottom: 2rem; /* Distancia desde abajo */
+    right: 2rem; /* Distancia desde la derecha */
+    width: 70px; /* Ajusta el tamaño del botón */
+    height: 70px;
+    z-index: 10;
+    border-radius: 50%; /* Hace el botón circular */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    animation: pulse 2s infinite ease-in-out; /* Animación de latido */
+}
+
+/* Hover effects */
+.floating-button:hover {
+    transform: scale(1.2); /* Agrandar al pasar el cursor */
+    box-shadow: 0 12px 20px rgba(255, 77, 77, 0.5); /* Sombra más destacada */
+}
+
+/* Botón animado: efecto de "latido" */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 12px 20px rgba(255, 77, 77, 0.4);
+    }
+}
+
+/* Imagen dentro del botón */
+.floating-button .button-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen al tamaño del botón */
+    border-radius: 50%; /* Hace el botón circular */
+    cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
     #home .home-logo {
@@ -57,5 +98,12 @@
 
     #home .logo-container {
         padding-top: 3rem; /* Reduce espacio superior en pantallas pequeñas */
+    }
+
+    .floating-button {
+        bottom: 1rem; /* Ajusta posición en pantallas pequeñas */
+        right: 1rem;
+        width: 50px;
+        height: 50px;
     }
 }

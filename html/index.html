@@ -21,51 +21,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/app.js"></script>
-    <!-- <script>
-        window.addEventListener('mousemove', function(e) {
-          var arr = [1, 0.9, 0.8, 0.5, 0.2];
-    
-          arr.forEach(function(i) {
-            var x = (1 - i) * 75;
-            var star = document.createElement('div');
-    
-            star.className = 'star';
-            star.style.top = e.pageY + Math.round(Math.random() * x - x / 2) + 'px';
-            star.style.left = e.pageX + Math.round(Math.random() * x - x / 2) + 'px';
-    
-            document.body.appendChild(star);
-    
-            window.setTimeout(function() {
-              document.body.removeChild(star);
-            }, Math.round(Math.random() * i * 600));
-          });
-        }, false);
-    </script> -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            document.addEventListener("mousemove", (e) => {
-                createTrail(e.clientX, e.clientY);
-            });
-        });
-    
-        function createTrail(x, y) {
-            // Crear el elemento del rastro
-            const trail = document.createElement("div");
-            trail.classList.add("cursor-trail");
-    
-            // Posicionar el rastro
-            trail.style.left = `${x}px`;
-            trail.style.top = `${y}px`;
-    
-            // Añadir el rastro al DOM
-            document.body.appendChild(trail);
-    
-            // Eliminar el rastro después de la animación
-            setTimeout(() => {
-                trail.remove();
-            }, 1200); // Tiempo igual a la duración de la animación
-        }
-    </script>
-    
+    <script src="/js/sparkling_cursor.js"></script>
 </body>
 </html>

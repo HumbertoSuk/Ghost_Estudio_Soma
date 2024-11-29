@@ -4,7 +4,7 @@
     background-size: cover;
     background-color: #992120; /* Fondo negro */
     color: #f2eee3; /* Texto blanco */
-    padding: 0 30px; /* Margen a la izquierda y derecha */
+    padding: 0 10px; /* Margen a la izquierda y derecha */
     font-family: 'Roboto', sans-serif; /* Fuente para texto */
 }
 
@@ -28,7 +28,7 @@
     height: auto;
     border-radius: 8px; /* Bordes redondeados */
     transform:scale(1.2);
-    margin-bottom: 80PX;
+    margin-bottom: 25PX;
 }
 
 /* Texto Hola */
@@ -46,8 +46,8 @@
     font-size: 1.2rem; /* Tamaño del texto general */
     line-height: 1.6; /* Altura de línea */
     color: #f2eee3; /* Blanco */
-    margin-bottom: 1rem;
-    text-align: justify;
+    margin-bottom: 0.5rem;
+    text-align: left;
     transform: translate(-150px, -80px);
 }
 
@@ -57,3 +57,99 @@
     font-weight: bold;
 }
 
+/* Animaciones generales */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes wobble {
+    0% {
+        transform: rotate(0deg) scale(1.1);
+    }
+    25% {
+        transform: rotate(2deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(-2deg) scale(1.1);
+    }
+    75% {
+        transform: rotate(1deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(0deg) scale(1.1);
+    }
+}
+
+
+
+/* Imagen tambaleante en loop */
+.photo {
+    opacity: 0; /* Inicialmente oculta */
+    animation: fadeIn 1s ease-in-out forwards, wobble 2s ease-in-out infinite; /* Tambaleo infinito */
+    animation-delay: 1s; /* Retraso para que aparezca primero con fadeIn */
+}
+
+/* Responsividad */
+@media (max-width: 1000px) {
+
+    /* Contenedor principal */
+    #about-content {
+        padding: 10px; /* Reducir el margen lateral */
+    }
+
+    /* Título principal */
+    .about-title {
+        font-size: 2.8rem; /* Reducir tamaño del título */
+        transform: translateX(0); /* Quitar la traducción horizontal */
+        text-align: center; /* Centrar el título */
+        margin-bottom: 20px; /* Ajustar el margen inferior */
+    }
+
+    /* Imagen */
+    .photo-frame {
+        text-align: center; /* Centrar la imagen */
+        margin-bottom: -150px; /* Reducir margen inferior */
+    }
+
+    .photo {
+        width: 100%; /* Ajustar el tamaño de la imagen */
+        height: auto; /* Mantener proporción */
+        transform: scale(1.3); /* Quitar escala */
+    }
+
+    /* Texto Hola */
+    .about-hello-text {
+        font-size: 2.5rem; /* Reducir tamaño del texto Hola */
+        transform: translate(0, 0); /* Quitar traducción */
+        text-align: center; /* Centrar el texto */
+        margin-bottom: 10px; /* Ajustar el margen inferior */
+    }
+
+    /* Texto en Roboto */
+    .about-roboto-text {
+        font-size: 1.5rem; /* Reducir tamaño del texto */
+        line-height: 1.4; /* Ajustar altura de línea */
+        text-align: justify; /* Justificar el texto */
+        transform: translate(0, 0); /* Quitar traducción */
+        margin-bottom: 15px; /* Ajustar el margen inferior */
+    }
+
+    /* Destacar texto */
+    .about-highlight {
+        font-weight: bold;
+        font-size: 1.5rem; /* Reducir tamaño del texto destacado */
+    }
+
+    /* Espaciador */
+    #espacer {
+        margin-bottom: 100px; /* Añadir 100px de espacio */
+        width: 100%; /* Asegurar que ocupe el ancho completo */
+    }
+}

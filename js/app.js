@@ -23,11 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         content.appendChild(sectionDiv);
                     });
 
-                    // Llamar a la inicialización de los proyectos
+                    // Inicializar funcionalidades
                     initializeProjects();
-
-                    // Inicializar la funcionalidad de scroll del menú
                     initializeMenuScroll();
+                    initializeCursorTrail();
                 })
                 .catch(error => console.error('Error al cargar las secciones:', error));
         })
@@ -39,42 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
  */
 function initializeProjects() {
     const projectsData = [
-        {
-            title: "Cultivate",
-            images: ["/assets/img/projects/Protecto 1.1.png", "/assets/img/projects/Proyecto 1.2.png"]
-        },
-        {
-            title: "Entre Café Estamos",
-            images: ["/assets/img/projects/Proyecto 2.1.png", "/assets/img/projects/Proyecto 2.2.png", "/assets/img/projects/Proyecto 2.3.png"]
-        },
-        {
-            title: "Bunny Clothes",
-            images: ["/assets/img/projects/Proyecto 3.1.png", "/assets/img/projects/Proyecto 3.2.png"]
-        },
-        {
-            title: "Sketchbook Silent Hill",
-            images: ["/assets/img/projects/Proyecto 4.1.png", "/assets/img/projects/Proyecto 4.2.png"]
-        },
-        {
-            title: "Carteles",
-            images: ["/assets/img/projects/Proyecto 5.1.png", "/assets/img/projects/Proyecto 5.2.png"]
-        },
-        {
-            title: "Fanzine Cosas Que Nunca Dije",
-            images: ["/assets/img/projects/Proyecto 6.1.png", "/assets/img/projects/Proyecto 6.2.png", "/assets/img/projects/Proyecto 6.3.png"]
-        },
-        {
-            title: "Soüre",
-            images: ["/assets/img/projects/Proyecto 7.1.png", "/assets/img/projects/Proyecto 7.2.png"]
-        },
-        {
-            title: "Gatito Suertudito",
-            images: ["/assets/img/projects/Proyecto 8.1.png", "/assets/img/projects/Proyecto 8.2.png"]
-        },
-        {
-            title: "Semillas del Desierto",
-            images: ["/assets/img/projects/Proyecto 9.1.png", "/assets/img/projects/Proyecto 9.2.png"]
-        }
+        { title: "Cultivate", images: ["/assets/img/projects/Protecto 1.1.png", "/assets/img/projects/Proyecto 1.2.png"] },
+        { title: "Entre Café Estamos", images: ["/assets/img/projects/Proyecto 2.1.png", "/assets/img/projects/Proyecto 2.2.png", "/assets/img/projects/Proyecto 2.3.png"] },
+        { title: "Bunny Clothes", images: ["/assets/img/projects/Proyecto 3.1.png", "/assets/img/projects/Proyecto 3.2.png"] },
+        { title: "Sketchbook Silent Hill", images: ["/assets/img/projects/Proyecto 4.1.png", "/assets/img/projects/Proyecto 4.2.png"] },
+        { title: "Carteles", images: ["/assets/img/projects/Proyecto 5.1.png", "/assets/img/projects/Proyecto 5.2.png"] },
+        { title: "Fanzine Cosas Que Nunca Dije", images: ["/assets/img/projects/Proyecto 6.1.png", "/assets/img/projects/Proyecto 6.2.png", "/assets/img/projects/Proyecto 6.3.png"] },
+        { title: "Soüre", images: ["/assets/img/projects/Proyecto 7.1.png", "/assets/img/projects/Proyecto 7.2.png"] },
+        { title: "Gatito Suertudito", images: ["/assets/img/projects/Proyecto 8.1.png", "/assets/img/projects/Proyecto 8.2.png"] },
+        { title: "Semillas del Desierto", images: ["/assets/img/projects/Proyecto 9.1.png", "/assets/img/projects/Proyecto 9.2.png"] }
     ];
 
     const projectsGrid = document.getElementById("projects-grid");

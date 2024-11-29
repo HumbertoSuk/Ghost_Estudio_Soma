@@ -5,11 +5,22 @@
     padding: 20px 0;
 }
 
-/* Logo a la izquierda */
+/* Logo a la izquierda con animación */
 .footer-logo {
     width: 250px;
     height: auto;
     cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+    animation: logoSwing 3s infinite ease-in-out; /* Animación en bucle */
+}
+
+/* Animación para el logo */
+@keyframes logoSwing {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(3deg); /* Oscilación ligera */
+    }
 }
 
 /* Íconos de redes sociales */
@@ -21,23 +32,32 @@
 }
 
 .footer-icon:hover img {
-    transform: scale(1.2);
-    opacity: 0.8;
+    transform: scale(1.1);
+    opacity: 0.85; /* Reducción del brillo */
 }
 
 /* Enlaces del footer */
 .footer-links {
     font-family: 'Bokor', sans-serif;
-}
-
-.menu-link {
-    color: #992120;
-    font-size: 1.6rem;
-    text-decoration: none;
     cursor: url(/assets/img/cursor/Cursor_select.png), auto;
 }
 
+.footer-menu-link {
+    font-family: 'Bokor', sans-serif; /* Fuente personalizada */
+    font-size: 1.8rem;
+    color: #ff4d4d; /* Rojo más apagado */
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: text-shadow 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+    cursor: url(/assets/img/cursor/Cursor_select.png), auto;
+}
 
+/* Efecto neón más sutil para enlaces */
+.footer-menu-link:hover {
+    text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff6666; /* Menos brillante */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
 
 /* Imagen de Batzzy a la derecha */
 .footer-batzzy {
@@ -49,4 +69,12 @@
 
 .footer-batzzy:hover {
     transform: scale(1.1);
+}
+
+/* Contenedor del menú */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaciado entre elementos */
 }

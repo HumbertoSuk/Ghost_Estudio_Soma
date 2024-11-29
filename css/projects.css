@@ -1,24 +1,43 @@
 /* Fondo y estilos generales */
-#projects{
+#projects {
     background: url('/assets/img/background/Separador fondo negro.png') no-repeat center bottom / contain;
     background-size: cover;
-    background-color: #f2eee3; 
+    background-color: #f2eee3;
     color: #f2eee3; /* Texto blanco */
     padding: 50px 0; /* Espaciado superior e inferior */
     font-family: 'Roboto', sans-serif;
-    
 }
 
-h1{
-    margin-bottom: 220px;
+/* Espaciador */
+#espacer {
+    margin-bottom: 200px; /* Añadir 200px de espacio */
+    width: 100%; /* Asegurar que ocupe el ancho completo */
 }
 
+/* Título con animación en loop */
 .projects-title {
     font-family: 'Bokor', sans-serif;
     color: #992120;
     font-size: 3.5rem;
     text-transform: uppercase;
     margin-bottom: 30px;
+    animation: loopAnimation 3s ease-in-out infinite; /* Animación infinita */
+}
+
+/* Animaciones generales */
+@keyframes loopAnimation {
+    0% {
+        opacity: 0.8;
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.05); /* Subir y aumentar ligeramente */
+    }
+    100% {
+        opacity: 0.8;
+        transform: translateY(0) scale(1);
+    }
 }
 
 /* Estilo de las tarjetas */
